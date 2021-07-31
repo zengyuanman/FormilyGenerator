@@ -1,0 +1,388 @@
+@import './atom.less';
+
+/*
+  用于原有样式的覆盖
+ */
+.fr-generator-container {
+    position: relative;
+    position: relative;
+
+    display: flex;
+    overflow: hidden;
+
+    height: 100%;
+    min-height: 30vh;
+
+    .mid-layout {
+        display: flex;
+        /* height: 100%; */
+        overflow: hidden;
+        flex-direction: column;
+        flex-grow: 1;
+        flex-shrink: 1;
+
+        padding: 0 20px;
+
+        border-right: 1px solid #e0e0e0;
+        border-left: 1px solid #e0e0e0;
+    }
+
+    .flex-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dnd-container {
+        overflow-y: auto;
+        flex-grow: 1;
+    }
+
+    .ant-tabs.ant-tabs-top {
+        display: flex;
+        flex-direction: column;
+
+        height: 100%;
+    }
+
+    .ant-tabs-content-holder {
+        flex-grow: 1;
+    }
+
+    .ant-tabs-content.ant-tabs-content-top {
+        height: 100%;
+    }
+
+    .ant-tabs-tabpane.ant-tabs-tabpane-active {
+        overflow-y: auto;
+
+        height: 100%;
+    }
+}
+
+.fr-generator-container .dnd-container.edit {
+    .top-upper {
+        top: -12px;
+    }
+
+    .fr-set {
+        margin-bottom: 12px;
+        padding: 12px 14px 12px 12px;
+
+        border-radius: 4px;
+    }
+
+    .fr-field {
+        margin-bottom: 24px;
+    }
+
+    .fr-label {
+        display: block;
+    }
+
+    .fr-label-title {
+        font-size: 14px;
+        line-height: 22px;
+
+        display: inline-flex;
+
+        min-height: 22px; /* ""的标签页占位 */
+
+        color: #333;
+    }
+
+    .fr-label-required {
+        font-family: SimSun, sans-serif;
+        font-size: 14px;
+
+        margin: 1px 4px 0 0;
+
+        color: #f5222d;
+    }
+
+    .fr-label-title::after {
+        position: relative;
+        top: -.5px;
+
+        margin: 0 10px 0 2px;
+
+        content: ':';
+    }
+
+    .fr-label-title.no-colon::after {
+        margin: 0;
+
+        content: '';
+    }
+
+    .fr-label-object .fr-label-title {
+        font-size: 16px;
+
+        color: #222;
+    }
+
+    .fr-desc {
+        font-size: 12px;
+
+        margin-top: 3px;
+
+        word-break: break-all;
+
+        color: #888;
+    }
+
+    .fr-validate {
+        font-size: 12px;
+
+        margin-left: 12px;
+
+        word-break: break-all;
+
+        color: #f5222d;
+    }
+
+    /* Row */
+
+    .fr-validate-row {
+        margin: 3px 0 0 0;
+    }
+
+    .fr-label-row {
+        flex-shrink: 0;
+
+        text-align: right;
+    }
+
+    .fr-field-row .fr-content {
+        position: relative;
+
+        flex: 1;
+    }
+
+    .fr-field-row .fr-tooltip-icon {
+        margin: 3px 2px 0 0;
+    }
+
+    /* 自定义类 */
+    .hover-b--black-20:hover {
+        border-color: rgba(0, 0, 0, .3);
+    }
+
+    .pt44 {
+        padding-top: 46px;
+    }
+
+    .pv12 {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    /* 组件内部样式*/
+    .fr-color-picker {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+
+        width: 100%;
+
+        color: #666;
+    }
+
+    .fr-color-picker .rc-color-picker-trigger {
+        width: 60px;
+        height: 30px;
+        margin-right: 12px;
+
+        border: 1px solid #e5e5e5;
+    }
+
+    .fr-color-picker > p {
+        font-size: 14px;
+        line-height: 28px;
+
+        margin: 0;
+    }
+
+    .fr-color-picker .rc-color-picker-wrap {
+        display: flex;
+    }
+
+    .next-input,.next-number-picker {
+        width: 100%;
+    }
+
+    .upload-img {
+        max-width: 200px;
+        max-height: 200px;
+        margin-right: 24px;
+    }
+
+    .fr-preview-image {
+        width: 160px;
+    }
+
+    .fr-preview {
+        position: relative;
+
+        cursor: pointer;
+    }
+
+    .fr-upload-mod,.fr-upload-file {
+        display: flex;
+    }
+
+    .fr-upload-mod {
+        align-items: center;
+    }
+
+    .fr-upload-mod .fr-upload-preview {
+        margin: 0 12px;
+    }
+
+    .fr-upload-file .ant-upload-list-item {
+        margin: 5px 0 0 8px;
+    }
+
+    .fr-upload-file .ant-upload-list-item-name {
+        margin-right: 6px;
+    }
+
+    .fr-upload-file .ant-upload-list-item-info {
+        cursor: pointer;
+    }
+
+    .fr-upload-file .next-upload-list-text .next-upload-list-item-done,.fr-upload-file .next-upload-list-text .next-upload-list-item .next-icon {
+        line-height: 28px;
+
+        height: 28px;
+        margin-left: 12px;
+    }
+
+    .fr-upload-file .next-upload-list-item-name-wrap {
+        margin-top: -4px;
+    }
+
+    .fr-sort-help-class {
+        background: #fff;
+    }
+
+    /* 其他样式 */
+
+    .fold-icon.fold-icon-active {
+        transform: rotate(0deg);
+    }
+
+    .fold-icon {
+        position: relative;
+
+        cursor: pointer;
+        transition: transform .24s;
+        transform: rotate(-90deg);
+    }
+
+    .fold-icon::after {
+        position: absolute;
+        top: -20px;
+        right: -10px;
+        bottom: -5px;
+        left: -20px;
+
+        content: '';
+    }
+
+    .fr-tooltip-toggle {
+        position: relative;
+
+        cursor: pointer;
+    }
+
+    .fr-tooltip-toggle:hover .fr-tooltip-container {
+        visibility: visible;
+
+        opacity: 1;
+    }
+
+    .fr-tooltip-icon {
+        display: block;
+
+        width: 14px;
+        height: 14px;
+        margin: 4px 0 0 4px;
+
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEnUlEQVR42u1bS0iUURT+zd4Y9KDosSihNhYUaBE9YKpFDKKOOmOLahtJ2SoxA2fUdUoQJK5qU0ib6LlxUYJpkY0LE3tQZkU7y7A0e1jnA4Of8pz//5373/+BF44Oc+/c853v3nOf5xpup0QiMZ9kD8mxeDzeTHKXPveSvKXP3+j/GP1/h++QhzIoW1ZWthu/NYKYysvLN5EhKZJ7ZMQEye8ZyjjJfZIk6vS10YWFhcvI4FoC2wfwLkkf6aiBLt8YHovFNhCoFnRlgNQkY9BJbrLeS9uzqFueYAzXJV9ITgKLVsvBPCnuAAifSIe23kBd7zApHHUI8D3JBfptFUlialbYSJIDweep7+Iog7L4jUMdn4HNzeksmxRcdgColyRZWlq6NQOd21AH6rKrFxiBVanxxcXFS6jSdpsAHtLYUODC1FqAum0S0Q7Mqlp+ESlO2zD8DUmJBhcsgS4bJDwBdhUKb1ko+kll6qLR6AJDU4IuuAZ0W2C7kWnrJy1a/QONvjsNjxLp32VjsEzO1OcOkoJJoeJuGuBWGB4nYCCcD4RGmiSJOm35PIup7kokEplr+CQBCzAJeEeJqC22V3jE2IBQWVd+fv48w2cJmAhbp4C7H7bZaf1KoZJBbET8vCEDRgF/pdXGZim1/ifGl344WtTIJJ//B+ggts+K6t4BrAwBH2GjNKo2CuxVqzJeGLDqFemoFnQ0sq0vDHyP4D+KwI1ILqZqpyqsGmFjznStX8tNIzQlbjYUJasVnCo9wAzsjE1npyPgFQPqJvKDRYC8ioWt/200BFD7FRMwIu0nFBNwgNMFm80Fz0mAFIOqVz4IyoS/ZvQ1mQv1MYBqkO8GCSDXTDRjvAoCznAHrH/X0qu4FqE99Voj2AkErOPsg+3w/wqmwDMjHAkkPGdsPITMBqb7t4SFANjCjTkgoI0ZJY+Hwnp5f9MGdtIMOxF35n1ZXDrG38fYmDa48zWcs4eFANxesUtv+jPMZC4PCwE4NWL0DRvcehkHjyEhACdGCxl9vwBwggEyxw0wXhCAOANG34TsAi4k37kA/RliMnND1ANyGX1DGAMe89Og+uSjaRDSAwKucgeIYSEAcQzc8T4ISDGZrSFygVaml6dAQILJfBEiAl4yy/0KZK6WtsMBJwD+v0bcDk/tlp4yveB0cAmQj8hhs7lQE1NoIAQEPGdsazZ3k+3SoahOAvQfisoDBeR2QAmArjvcsbi2i5FMQ+Ay0Jvn6GIE10VWV2MBIiALmKWrMfFylJsRgkIAsAp1NojX47hCZn74HdfjficAAzp3PY6rf9g4GyBhw3/6Axoi0yW48IDtcQwBRVIUOHaQfguSAiYpvB42Od1Cxiz8s5tkpdfGAwOwSFhhy0xXUnV+DpSEbmCwwFiXKcPXbYTKpnSHykIndFsYf01JsDRJTxCDpUGU7nB5SKcfwuWLiooWK38wQXLJwcOFtIoHE/Bh5v6SE2DMdvNN4BE3nszQ93szfTJDclTbU7lAP5pSGIxY5eWzOdL/lXrkKW6Fp7M3XPTi4SR0zz6dnX087fOEq2k8hTc/nydJm57Pj3v5fP4PSqRR6oYkTaUAAAAASUVORK5CYII=');
+        background-size: cover;
+    }
+
+    .fr-tooltip-container {
+        font-size: 13px;
+
+        position: absolute;
+        z-index: 99999;
+        bottom: 30px;
+        left: 50%;
+
+        visibility: hidden;
+
+        width: 160px;
+        margin-left: -77px;
+        padding: 4px;
+
+        cursor: auto;
+        transition: all .5s ease;
+        text-align: center;
+        white-space: initial !important;
+        word-wrap: break-word;
+
+        opacity: 0;
+        color: #efefef;
+        border-radius: 4px;
+        background: #2b222a;
+    }
+
+    .fr-tooltip-triangle {
+        font-size: 0;
+        line-height: 0;
+
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+
+        width: 0;
+        margin-left: -5px;
+
+        content: ' ';
+        transition: all .5s ease;
+
+        border-top: 5px solid #2b222a;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+    }
+
+    .fr-tooltip-toggle::before,.fr-tooltip-toggle::after {
+        font-size: 13px;
+
+        text-align: center;
+        pointer-events: none;
+
+        opacity: 0;
+        color: #efefef;
+    }
+
+    .fr-tooltip-toggle:focus::before,.fr-tooltip-toggle:focus::after,.fr-tooltip-toggle:hover::before,.fr-tooltip-toggle:hover::after {
+        transition: all .75s ease;
+
+        opacity: 1;
+    }
+
+    .fr-slider {
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+    }
+
+    .fr-map {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
